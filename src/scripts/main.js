@@ -229,7 +229,6 @@ function moveAndCombineTileHTML() {
 }
 
 function stap(naighbour, direction, tile) {
-// try {
 
   if (naighbour) {
     const naighbourIndex = Tile.tiles.indexOf(naighbour);
@@ -247,10 +246,6 @@ function stap(naighbour, direction, tile) {
       messageWin.classList.remove('hidden');
     }
   }
-
-  // } catch (error) {
-  //   debugger;
-  // }
 
   switch (direction) {
     case 'ArrowUp':
@@ -314,6 +309,10 @@ buttonRestart.addEventListener('click', () => {
   cells.forEach(cell => {
     cell.parentNode.innerHTML = '';
   });
+
+  const gameFilg = document.querySelector('.game-field');
+
+  gameFilg.style.opacity = '1';
 
   Tile.tiles = [];
   score = 0;
